@@ -1,106 +1,51 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAIA</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAIA — Consultoría Empresarial en IA</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="MAIA Logo" class="logo-img">
-            <span class="logo-text">MAIA</span>
-       </div>
-        <nav>
-            <a href="#quienes-somos">Quiénes Somos</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h1>MAIA</h1>
-                <p>CONSULTORIA EMPRESARIAL EN INTELIGENCIA ARTIFICIAL</p>
-            </div>
-        </section>
-        <section id="quienes-somos">
-            <h2>QUIENES SOMOS</h2>
-            <p>MAIA es una firma de consultoría especializada en inteligencia estratégica, ofrecemos soluciones innovadoras que implican la eficiencia organizacional, la transformación digital y la toma de decisiones basada en datos.</p>
-        </section>
-        <section id="servicios">
-            <h2>SERVICIOS</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <img src="icon1.png" alt="IA Aplicada" class="service-icon">
-                    <h3>Soluciones de IA Aplicada a Negocios</h3>
-                    <p>Aplicamos inteligencia artificial en procesos desomaldado tu empresa: automatización, predicción, análisis, inteligente y decisiones personalizadas.</p>
-                </div>
-                <div class="service-item">
-                    <img src="icon2.png" alt="Innovación Empresarial" class="service-icon">
-                    <h3>Innovación Empresarial y Proyectos de Inversión</h3>
-                    <p>Diseñamos y dirigimos iniciativas de crecimiento con IA, desde movimientos de negocio hacia estrategias y análisis de profesionalización. Tú oídos de unificación.</p>
-                </div>
-                <div class="service-item">
-                    <img src="icon3.png" alt="Transformación Digital" class="service-icon">
-                    <h3>Transformación Digital y Automatización Inteligente</h3>
-                    <p>Modernizamos la gestión RPA, planiformos cloud, integraciones. API | Rtooperacional para flujos automáticos y control total.</p>
-                </div>
-                <div class="service-item">
-                    <img src="icon4.png" alt="Consultoría Financiera" class="service-icon">
-                    <h3>Consultoría Financiera Estratégica</h3>
-                    <p>Te acompañamos en decisiones financieras con asesoría experiencia, enálisis de viabilidad y planificación de escenarios, jen.</p>
-                </div>
-                <div class="service-item">
-                    <img src="icon5.png" alt="Marketing y Producto" class="service-icon">
-                    <h3>Marketing, Publicidad y Desarrollo de Producto con IA</h3>
-                    <p>Atrae y entiende clientes mediante campañas automatizadas, análisis de comportamiento, IA generador de producto basado en datos.</p>
-                </div>
-            </div>
-        </section>
-        <section id="contacto">
-            <h2>CONTACTANOS</h2>
-        </section>
-    </main>
+  <header>
+    <div class="top-bar">
+      <img src="assets/img/logo-maia.png" class="logo-mini" alt="MAIA logo mini" />
+      <nav>
+        <a href="#quienes">Quiénes Somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="logo-central">
+      <img src="assets/img/logo-maia.png" alt="MAIA logo central" />
+      <h1>MAIA</h1>
+      <h2>CONSULTORÍA EMPRESARIAL EN INTELIGENCIA ARTIFICIAL</h2>
+    </div>
+  </header>
+
+  <section id="quienes">
+    <h2>QUIÉNES SOMOS</h2>
+    <p>
+      MAIA es una firma de consultoría especializada en inteligencia estratégica.
+      Ofrecemos soluciones innovadoras que mejoran la eficiencia organizacional,
+      impulsan la transformación digital y facilitan decisiones basadas en datos.
+    </p>
+  </section>
+
+  <section id="servicios">
+    <h2>SERVICIOS</h2>
+    <div class="servicios-container">
+      <div class="servicio"><img src="assets/img/icono1.svg" /><h3>Soluciones de IA Aplicada a Negocios</h3></div>
+      <div class="servicio"><img src="assets/img/icono2.svg" /><h3>Innovación Empresarial y Proyectos de Inversión</h3></div>
+      <div class="servicio"><img src="assets/img/icono3.svg" /><h3>Transformación Digital y Automatización Inteligente</h3></div>
+      <div class="servicio"><img src="assets/img/icono4.svg" /><h3>Consultoría Financiera Estratégica</h3></div>
+      <div class="servicio"><img src="assets/img/icono5.svg" /><h3>Marketing, Publicidad y Desarrollo de Producto con IA</h3></div>
+      <div class="servicio"><img src="assets/img/icono6.svg" /><h3>Desarrollo Estratégico con IA</h3></div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <button class="btn-contacto">CONTÁCTANOS</button>
+  </footer>
 </body>
 </html>
