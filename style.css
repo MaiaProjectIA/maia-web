@@ -1,39 +1,51 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000;
     color: #fff;
+    text-align: center;
 }
 
 header {
+    padding: 20px;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #000;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+.logo-small {
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
-.logo-img {
-    width: 50px;
+.logo-img-small {
+    width: 40px;
     height: auto;
-    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
 nav a {
     color: #fff;
-    margin-left: 20px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #hero {
-    text-align: center;
-    padding: 50px 0;
+    padding: 40px 0;
+}
+
+.logo-central {
+    width: 140px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 #hero h1 {
@@ -42,19 +54,26 @@ nav a {
 }
 
 #hero p {
-    font-size: 1.5em;
-    color: #00ffff;
+    font-size: 1.2em;
+    color: #00eaff;
+    margin: 0;
 }
 
 #quienes-somos, #servicios, #contacto {
-    padding: 40px;
-    text-align: center;
+    padding: 40px 20px;
+}
+
+h2 {
+    color: #00eaff;
+    font-size: 2em;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service {
@@ -64,14 +83,16 @@ nav a {
 }
 
 .service img {
-    width: 50px;
-    height: auto;
+    height: 64px;
+    margin-bottom: 10px;
 }
 
 .service h3 {
     color: #ffd700;
+    font-size: 1.2em;
 }
 
 .service p {
     font-size: 0.9em;
+    margin: 0;
 }
