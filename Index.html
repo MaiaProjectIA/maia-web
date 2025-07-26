@@ -1,124 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAIA — Maestros de Inteligencia Artificial</title>
-  <link rel="icon" href="logo.png">
-  <style>
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0b0c10; color: #ffffff; }
-    header {
-      background: #111; padding: 1rem 2rem; display: flex;
-      justify-content: space-between; align-items: center;
-    }
-    header img { height: 50px; }
-    nav a {
-      color: #0ff; margin: 0 1rem; text-decoration: none;
-      font-weight: bold; transition: color 0.3s ease;
-    }
-    nav a:hover { color: #ffc107; }
-    section {
-      padding: 4rem 2rem; max-width: 1000px; margin: auto;
-    }
-    .hero {
-      text-align: center; background: linear-gradient(to right, #0f2027, #203a43);
-      padding: 6rem 2rem;
-    }
-    .hero h1 {
-      font-size: 3rem; color: #0ff;
-    }
-    .hero p { color: #ccc; font-size: 1.2rem; }
-    .servicios {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
-    }
-    .servicio {
-      background: #1a1a1a; padding: 2rem; border-radius: 1rem;
-      border: 1px solid #2c2c2c; transition: transform 0.3s ease;
-    }
-    .servicio:hover { transform: translateY(-5px); }
-    .servicio h3 { color: #0ff; }
-    form {
-      display: flex; flex-direction: column;
-    }
-    input, textarea {
-      margin-bottom: 1rem; padding: 0.8rem;
-      border: none; border-radius: 0.5rem;
-    }
-    button {
-      background: #0ff; border: none; padding: 1rem;
-      color: #000; font-weight: bold; border-radius: 0.5rem;
-      cursor: pointer;
-    }
-    footer {
-      background: #111; text-align: center; padding: 2rem;
-      color: #777;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIA — Consultoría IA</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Logo MAIA">
-    <nav>
-      <a href="#quienes">Quiénes Somos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+    <header>
+        <img src="assets/img/logo-maia.png" alt="MAIA Logo" class="logo-central">
+        <nav>
+            <ul>
+                <li><a href="#quienes">Quiénes Somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <h1>MAIA — Maestros de Inteligencia Artificial</h1>
-    <p>Consultoría avanzada para un futuro inteligente.</p>
-  </section>
+    <section id="quienes">
+        <h2>Quiénes Somos</h2>
+        <p>MAIA es una firma de consultoría especializada en inteligencia estratégica...</p>
+    </section>
 
-  <section id="quienes">
-    <h2>¿Quiénes Somos?</h2>
-    <p>MAIA es una consultora de vanguardia especializada en soluciones integrales de Inteligencia Artificial. Nuestro equipo multidisciplinario trabaja en seis divisiones clave para ofrecer impacto real a organizaciones en transformación.</p>
-  </section>
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="servicio">
+            <img src="assets/img/icono1.svg" alt="Icono 1">
+            <h3>Soluciones de IA Aplicada</h3>
+            <p>Automatización, predicción, personalización...</p>
+        </div>
+        <!-- Repetir estructura para otros servicios -->
+    </section>
 
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <div class="servicios">
-      <div class="servicio">
-        <h3>1. Desarrollo de Inteligencia Artificial</h3>
-        <p>Modelos personalizados, NLP, visión computacional y soluciones cognitivas adaptadas a tu industria.</p>
-      </div>
-      <div class="servicio">
-        <h3>2. Marketing y Publicidad Estratégica con IA</h3>
-        <p>Automatización de campañas, segmentación predictiva y creatividad algorítmica.</p>
-      </div>
-      <div class="servicio">
-        <h3>3. Dirección y Automatización Financiera</h3>
-        <p>Sistemas de predicción, optimización de flujos y control financiero automatizado.</p>
-      </div>
-      <div class="servicio">
-        <h3>4. Proyectos de Inversión Tecnológica</h3>
-        <p>Identificación, planificación y evaluación de inversiones disruptivas basadas en IA.</p>
-      </div>
-      <div class="servicio">
-        <h3>5. Estrategia Empresarial y Calidad</h3>
-        <p>Auditorías de procesos, diseño estratégico, control de calidad e innovación organizacional.</p>
-      </div>
-      <div class="servicio">
-        <h3>6. Transformación Digital y Automatización</h3>
-        <p>Digitalización, RPA, integración de sistemas inteligentes y transición cultural al entorno 4.0.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2>Contáctanos</h2>
-    <form>
-      <input type="text" placeholder="Nombre">
-      <input type="email" placeholder="Correo Electrónico">
-      <textarea rows="4" placeholder="Mensaje"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <p>También puedes escribirnos directamente por <a href="https://wa.me/1234567890" target="_blank" style="color:#0ff;">WhatsApp</a>.</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 MAIA — Todos los derechos reservados.</p>
-    <p>Síguenos en redes sociales: LinkedIn, X, Instagram</p>
-  </footer>
+    <footer id="contacto">
+        <button class="btn-contacto">Contáctanos</button>
+    </footer>
 </body>
 </html>
