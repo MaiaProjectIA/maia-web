@@ -1,98 +1,88 @@
+
 body {
-    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    padding: 0;
     background-color: #000;
     color: #fff;
+    font-family: 'Segoe UI', sans-serif;
     text-align: center;
 }
 
-header {
-    padding: 20px;
-    position: relative;
+.top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 30px;
+    background-color: #000;
 }
 
-.logo-small {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-.logo-img-small {
-    width: 40px;
-    height: auto;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-nav a {
-    color: #fff;
+.top-bar nav a {
+    color: #00eaff;
+    margin-left: 20px;
     text-decoration: none;
     font-weight: bold;
 }
 
-#hero {
-    padding: 40px 0;
+.logo-mini {
+    width: 40px;
+    height: 40px;
 }
 
 .logo-central {
+    margin-top: 20px;
+}
+
+.logo-central img {
     width: 140px;
-    height: auto;
-    margin-bottom: 20px;
 }
 
-#hero h1 {
-    font-size: 4em;
+.logo-central h1 {
+    font-size: 3em;
+    color: white;
+    margin: 10px 0 0 0;
+}
+
+.logo-central h2 {
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: #ccc;
     margin: 0;
 }
 
-#hero p {
-    font-size: 1.2em;
-    color: #00eaff;
-    margin: 0;
-}
-
-#quienes-somos, #servicios, #contacto {
+section {
     padding: 40px 20px;
 }
 
 h2 {
-    color: #00eaff;
     font-size: 2em;
+    color: #00eaff;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.servicios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
 }
 
-.service {
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
+.servicio {
+    max-width: 240px;
 }
 
-.service img {
+.servicio img {
     height: 64px;
     margin-bottom: 10px;
 }
 
-.service h3 {
-    color: #ffd700;
-    font-size: 1.2em;
-}
-
-.service p {
-    font-size: 0.9em;
-    margin: 0;
+.btn-contacto {
+    background-color: #00eaff;
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 40px 0;
 }
