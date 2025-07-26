@@ -1,40 +1,104 @@
-<!DOCTYPE html>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAIA — Consultoría IA</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MAIA</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="assets/img/logo-maia.png" alt="MAIA Logo" class="logo-central">
+        <div class="logo">
+            <img src="logo.png" alt="MAIA Logo" class="logo-img">
+            <span>MAIA</span>
+        </div>
         <nav>
-            <ul>
-                <li><a href="#quienes">Quiénes Somos</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <a href="#quienes-somos">Quiénes Somos</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
         </nav>
     </header>
-
-    <section id="quienes">
-        <h2>Quiénes Somos</h2>
-        <p>MAIA es una firma de consultoría especializada en inteligencia estratégica...</p>
-    </section>
-
-    <section id="servicios">
-        <h2>Servicios</h2>
-        <div class="servicio">
-            <img src="assets/img/icono1.svg" alt="Icono 1">
-            <h3>Soluciones de IA Aplicada</h3>
-            <p>Automatización, predicción, personalización...</p>
-        </div>
-        <!-- Repetir estructura para otros servicios -->
-    </section>
-
-    <footer id="contacto">
-        <button class="btn-contacto">Contáctanos</button>
-    </footer>
+    <main>
+        <section id="hero">
+            <h1>MAIA</h1>
+            <p>CONSULTORIA EMPRESARIAL EN INTELIGENCIA ARTIFICIAL</p>
+        </section>
+        <section id="quienes-somos">
+            <h2>QUIENES SOMOS</h2>
+            <p>MAIA es una firma de consultoría especializada en inteligencia estratégica, ofrecemos soluciones innovadoras que implican la eficiencia organizacional, la transformación digital y la toma de decisiones basada en datos.</p>
+        </section>
+        <section id="servicios">
+            <h2>SERVICIOS</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <img src="ia-negocios.png" alt="IA Negocios">
+                    <h3>Soluciones de IA Aplicada a Negocios</h3>
+                    <p>Aplicamos inteligencia artificial en procesos desomaldado tu empresa: automatización, predicción de riesgos, inteligencia ni divididos personalabéc.</p>
+                </div>
+                <div class="service">
+                    <img src="innovacion.png" alt="Innovación Empresarial">
+                    <h3>Innovación Empresarial y Proyectos de Inversión</h3>
+                    <p>Diseñamos y dirigimos iniciativas de crecimiento con IA, desde modelos de negocio hasta estrategias de proyección. Tú ovidados de infesación.</p>
+                </div>
+                <div class="service">
+                    <img src="transformacion.png" alt="Transformación Digital">
+                    <h3>Transformación Digital y Automatización Inteligente</h3>
+                    <p>Modemizamos lu gestión RPA, pianformamos cloud, integraciones. API | rtooperacional para flujos automáticos y control total.</p>
+                </div>
+                <div class="service">
+                    <img src="consultoria-financiera.png" alt="Consultoría Financiera">
+                    <h3>Consultoría Financiera Estratégica</h3>
+                    <p>Te acompañamos en decisiones financieras cibor con asesoría, enalasis de viati bitidad y planificación de escenarios, jen.</p>
+                </div>
+                <div class="service">
+                    <img src="marketing.png" alt="Marketing y Desarrollo">
+                    <h3>Marketing, Publicidad y Desarrollo de Producto con IA</h3>
+                    <p>Atrae y tiene clientes mediante campañas automatizadas, analli sis de comportamiento, IA generadue de producto basado en datos.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contacto">
+            <h2>CONTACTANOS</h2>
+        </section>
+    </main>
 </body>
 </html>
