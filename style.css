@@ -44,8 +44,10 @@ body {
 
 .logo-text {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 300;
     color: white;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 0.2rem;
 }
 
 .nav-menu {
@@ -76,19 +78,19 @@ body {
 }
 
 .hero-logo {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero-icon {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
 }
 
 .hero-title {
     font-size: 5rem;
     font-weight: 300;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     letter-spacing: 1rem;
     font-family: 'Times New Roman', serif;
 }
@@ -103,7 +105,7 @@ body {
 
 /* Sections */
 .section {
-    padding: 5rem 2rem;
+    padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -112,7 +114,7 @@ body {
 .section-title {
     font-size: 2rem;
     font-weight: 400;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #4ecdc4;
     letter-spacing: 0.3rem;
     font-family: 'Arial', sans-serif;
@@ -132,17 +134,17 @@ body {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
-    margin-top: 4rem;
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
 .service-card {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .service-icon {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
 }
@@ -159,7 +161,7 @@ body {
 .service-title {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     color: white;
     line-height: 1.2;
     letter-spacing: 0.05rem;
@@ -175,7 +177,7 @@ body {
 
 /* Contact Section */
 .contact-section {
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
 }
 
@@ -200,8 +202,8 @@ body {
     }
 
     .hero-icon {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
     }
 
     .hero-title {
@@ -240,7 +242,7 @@ body {
 
 @media (max-width: 480px) {
     .section {
-        padding: 3rem 1rem;
+        padding: 2.5rem 1rem;
     }
 
     .navbar {
