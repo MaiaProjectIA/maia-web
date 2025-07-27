@@ -40,19 +40,6 @@ body {
 .logo-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(45deg, #d4af37, #f4d03f);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.logo-letter {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1a2332;
-    z-index: 1;
 }
 
 .logo-text {
@@ -95,30 +82,10 @@ body {
 .hero-icon {
     width: 200px;
     height: 200px;
-    background: linear-gradient(45deg, #d4af37, #f4d03f);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 0 auto;
-    position: relative;
 }
 
-.hero-icon::before {
-    content: '';
-    position: absolute;
-    inset: 4px;
-    background: #1a2332;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
-.hero-letter {
-    font-size: 80px;
-    font-weight: bold;
-    color: #d4af37;
-    z-index: 1;
-    position: relative;
-}
+/* Remove unused hero letter styles */
 
 .hero-title {
     font-size: 4rem;
@@ -174,33 +141,13 @@ body {
     margin-bottom: 2rem;
 }
 
-.hexagon {
+.hexagon-icon {
     width: 120px;
     height: 120px;
-    background: linear-gradient(45deg, #d4af37, #f4d03f);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 0 auto;
-    position: relative;
 }
 
-.hexagon::before {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    background: #1a2332;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
-.icon-letter {
-    font-size: 40px;
-    font-weight: bold;
-    color: #d4af37;
-    z-index: 1;
-    position: relative;
-}
+/* Remove unused icon letter styles */
 
 .megaphone-icon,
 .chart-icon,
@@ -244,10 +191,6 @@ body {
         height: 150px;
     }
 
-    .hero-letter {
-        font-size: 60px;
-    }
-
     .hero-title {
         font-size: 2.5rem;
         letter-spacing: 0.2rem;
@@ -271,13 +214,9 @@ body {
         padding: 1rem;
     }
 
-    .hexagon {
+    .hexagon-icon {
         width: 100px;
         height: 100px;
-    }
-
-    .icon-letter {
-        font-size: 30px;
     }
 
     .megaphone-icon,
