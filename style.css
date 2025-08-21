@@ -14,13 +14,20 @@ body {
   color: var(--blanco);
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #0A0A0A;
-  flex-wrap: wrap;
+<header class="main-header">
+  <div class="logo-container">
+    <img src="assets/img/maia-logo.png" alt="Logo MAIA" class="logo-small" />
+    <span class="logo-text">MAIA</span>
+  </div>
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#quienes">Quiénes Somos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
 }
 
 .logo-container {
