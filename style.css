@@ -1,57 +1,107 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #001f3f; /* Azul oscuro */
-    color: #ffffff;
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  background-color: #000;
+  color: white;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #ffd700; /* Dorado */
-    color: #001f3f;
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111;
 }
 
 .logo {
-    width: 150px;
-    height: auto;
+  height: 50px;
 }
 
-h1, h2, h3 {
-    color: #ffd700;
+nav a {
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ffd700;
-    color: #001f3f;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+.maia {
+  font-size: 4rem;
+  background: linear-gradient(to right, #d4af37, #f1c40f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.btn:hover {
-    background-color: #ffffff;
+.subtitulo {
+  text-align: center;
+  color: #00ffff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #001f3f;
-    border-top: 1px solid #ffd700;
+.seccion {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
 }
 
-@media (max-width: 600px) {
-    section {
-        padding: 10px;
-    }
+.servicios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: #111;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.icono {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  filter: brightness(1.3) sepia(1) hue-rotate(10deg) saturate(5); /* efecto dorado */
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.formulario button {
+  padding: 0.75rem;
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
