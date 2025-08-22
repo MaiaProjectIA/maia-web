@@ -1,75 +1,132 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MAIA - Maestros en Inteligencia Artificial</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="main-header">
-    <div class="logo-container">
-      <img src="assets/img/maia-logo.png" alt="MAIA logo" class="logo-small">
-      <span class="logo-text">MAIA</span>
-    </div>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#quienes">Quiénes Somos</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <img src="assets/img/maia-logo.png" alt="Logo grande" class="logo-central">
-      <h1 class="maia-title">MAIA</h1>
-      <h2 class="maia-subtitle">CONSULTORÍA EMPRESARIAL EN INTELIGENCIA ARTIFICIAL</h2>
-    </section>
+@font-face {
+  font-family: 'MaiaInter';
+  src: url('assets/fonts/MaiaDisplay-Inter.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 
-    <section id="quienes" class="section">
-      <h2 class="section-title azul">Quiénes Somos</h2>
-      <p class="text-white">MAIA es una firma de consultoría especializada en inteligencia estratégica. Ofrecemos soluciones innovadoras que impulsan la eficiencia organizacional, la transformación digital y la toma de decisiones basada en datos.</p>
-    </section>
+@font-face {
+  font-family: 'MaiaPlayfair';
+  src: url('assets/fonts/MaiaDisplay-Playfair.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 
-    <section id="servicios" class="section">
-      <h2 class="section-title azul">Servicios</h2>
-      <div class="services">
-        <div class="service">
-          <img src="assets/img/icono1.svg" alt="IA negocios">
-          <h3>Soluciones de IA Aplicada a Negocios</h3>
-          <p>Automatización, predicción y análisis inteligente personalizado para tu empresa.</p>
-        </div>
-        <div class="service">
-          <img src="assets/img/icono2.svg" alt="Innovación empresarial">
-          <h3>Innovación Empresarial y Proyectos de Inversión</h3>
-          <p>Diseñamos e impulsamos iniciativas de crecimiento con IA y tecnología.</p>
-        </div>
-        <div class="service">
-          <img src="assets/img/icono3.svg" alt="Transformación digital">
-          <h3>Transformación Digital y Automatización Inteligente</h3>
-          <p>Implementación de RPA, APIs, y sistemas cloud para procesos automáticos.</p>
-        </div>
-        <div class="service">
-          <img src="assets/img/icono4.svg" alt="Finanzas">
-          <h3>Consultoría Financiera Estratégica</h3>
-          <p>Decisiones financieras respaldadas por IA, planificación y análisis predictivo.</p>
-        </div>
-        <div class="service">
-          <img src="assets/img/icono5.svg" alt="Marketing IA">
-          <h3>Marketing, Publicidad y Desarrollo de Producto con IA</h3>
-          <p>Campañas inteligentes, análisis de comportamiento y desarrollo basado en datos.</p>
-        </div>
-      </div>
-    </section>
+/* Aplicación de fuentes */
+body {
+  font-family: 'MaiaInter', sans-serif;
+  color: #FFFFFF;
+  background-color: #000000;
+}
 
-    <section id="contacto" class="section contacto">
-      <a href="#" class="cta-button">Contáctanos</a>
-    </section>
-  </main>
-</body>
-</html>
+h1, h2, h3, .logo-text {
+  font-family: 'MaiaPlayfair', serif;
+  color: #D4AF37;
+}
+* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  font-family: 'Inter', sans-serif;
+  color: #FFFFFF;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #D4AF37;
+  text-align: center;
+}
+
+h2.section-title {
+  color: #00E3F3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+  font-size: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-container img {
+  height: 40px;
+}
+
+.logo-container span {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: #00E3F3;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.hero img {
+  width: 180px;
+  margin: 0 auto 1rem auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+}
+
+.hero h3 {
+  font-size: 1rem;
+  color: #CCCCCC;
+  margin-top: 0.5rem;
+}
+
+section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service {
+  padding: 1r
