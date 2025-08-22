@@ -56,22 +56,21 @@ h1, h2, h3 {
   color: #D4AF37; /* Dorado */
 }
 
-nav ul {
+.nav-links {
   display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
+  gap: 30px;
+  margin-right: 5vw; /* Acentra el bloque de navegación */
 }
 
-nav ul li a {
+.nav-links a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #00E3F3; /* Azul neón */
   font-weight: 500;
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #00E3F3;
+.nav-links a:hover {
+  color: #33F0FF; /* Azul más claro al pasar el ratón */
 }
 
 /* SECTIONS --------------------------- */
@@ -160,6 +159,13 @@ p.section-description {
   background-color: #00C3D0;
 }
 
+.contact p {
+  color: #00E3F3; /* Azul neón */
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
 /* FOOTER ------------------------------ */
 footer {
   padding: 40px 20px;
@@ -189,10 +195,10 @@ footer {
     align-items: flex-start;
   }
 
-  nav ul {
+  .nav-links {
     flex-direction: column;
     gap: 10px;
-    margin-top: 10px;
+    margin: 0 auto;
   }
 
   .hero h1 {
