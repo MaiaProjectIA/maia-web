@@ -1,30 +1,4 @@
-
-@font-face {
-  font-family: 'MaiaInter';
-  src: url('assets/fonts/MaiaDisplay-Inter.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'MaiaPlayfair';
-  src: url('assets/fonts/MaiaDisplay-Playfair.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Aplicación de fuentes */
-body {
-  font-family: 'MaiaInter', sans-serif;
-  color: #FFFFFF;
-  background-color: #000000;
-}
-
-h1, h2, h3, .logo-text {
-  font-family: 'MaiaPlayfair', serif;
-  color: #D4AF37;
-}
-* Reset básico */
+/* RESET & BASE ------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -33,116 +7,46 @@ h1, h2, h3, .logo-text {
 
 body {
   background-color: #000000;
-  font-family: 'Inter', sans-serif;
   color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  overflow-x: hidden;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  color: #D4AF37;
-  text-align: center;
+  color: #D4AF37; /* Dorado */
+  margin-bottom: 0.5em;
 }
 
-h2.section-title {
-  color: #00E3F3;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-p {
-  color: #FFFFFF;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 1rem auto;
-  font-size: 1rem;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: transparent;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.logo-container img {
-  height: 40px;
-}
-
-.logo-container span {
-  font-size: 1.5rem;
-  color: #FFFFFF;
-  font-weight: bold;
-}
-
-nav a {
-  color: #FFFFFF;
-  text-decoration: none;
-  margin-left: 1.5rem;
-  font-size: 1rem;
-}
-
-nav a:hover {
-  color: #00E3F3;
-}
-
-.hero {
-  text-align: center;
-  padding: 2rem 1rem 1rem 1rem;
-}
-
-.hero img {
-  width: 180px;
-  margin: 0 auto 1rem auto;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  letter-spacing: 0.2rem;
-}
-
-.hero h3 {
-  font-size: 1rem;
-  color: #CCCCCC;
-  margin-top: 0.5rem;
-}
-
-section {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.service {
-  padding: 1r
-  /* CABECERA MAIA */
+/* HEADER ------------------------------ */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
   background-color: transparent;
+  flex-wrap: wrap;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
 }
 
 .logo-text {
@@ -152,18 +56,150 @@ section {
   color: #D4AF37; /* Dorado */
 }
 
-.nav-links {
+nav ul {
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
-.nav-links a {
-  color: #FFFFFF;
+nav ul li a {
   text-decoration: none;
+  color: #FFFFFF;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #00E3F3; /* Azul neón */
+nav ul li a:hover {
+  color: #00E3F3;
+}
+
+/* SECTIONS --------------------------- */
+section {
+  padding: 80px 20px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero img {
+  margin: auto;
+  max-width: 200px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+.hero p {
+  color: #CCCCCC;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+h2.section-title {
+  color: #00E3F3;
+  font-size: 2rem;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+p.section-description {
+  color: #FFFFFF;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+/* SERVICIOS -------------------------- */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.service {
+  max-width: 400px;
+  margin-bottom: 60px;
+}
+
+.service img {
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.service h3 {
+  color: #D4AF37;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.service p {
+  color: #CCCCCC;
+  font-size: 0.95rem;
+}
+
+/* CONTACTO ---------------------------- */
+.contact {
+  margin-top: 40px;
+}
+
+.contact button {
+  background-color: #00E3F3;
+  color: #000000;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact button:hover {
+  background-color: #00C3D0;
+}
+
+/* FOOTER ------------------------------ */
+footer {
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  color: #CCCCCC;
+}
+
+/* FONTS ------------------------------ */
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/MaiaDisplay-Inter.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('assets/fonts/MaiaDisplay-Playfair.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* RESPONSIVE --------------------------- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .services {
+    padding: 20px;
+  }
 }
