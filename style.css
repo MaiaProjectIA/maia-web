@@ -23,14 +23,14 @@ img {
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  color: #D4AF37; /* Dorado */
+  color: #D4AF37;
   margin-bottom: 0.5em;
 }
 
 /* HEADER ------------------------------ */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 20px 40px;
   background-color: transparent;
@@ -53,24 +53,23 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #D4AF37; /* Dorado */
+  color: #D4AF37;
 }
 
 .nav-links {
   display: flex;
   gap: 30px;
-  margin-right: 5vw; /* Acentra el bloque de navegación */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #00E3F3; /* Azul neón */
+  color: #00E3F3;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #33F0FF; /* Azul más claro al pasar el ratón */
+  color: #33F0FF;
 }
 
 /* SECTIONS --------------------------- */
@@ -141,10 +140,41 @@ p.section-description {
 
 /* CONTACTO ---------------------------- */
 .contact {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
-.contact button {
+.contact-title {
+  color: #D4AF37;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #00E3F3;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
   background-color: #00E3F3;
   color: #000000;
   border: none;
@@ -155,16 +185,8 @@ p.section-description {
   transition: background-color 0.3s;
 }
 
-.contact button:hover {
+.contact-form button:hover {
   background-color: #00C3D0;
-}
-
-.contact p {
-  color: #D4AF37; /* Dorado metálico */
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 30px;
 }
 
 /* FOOTER ------------------------------ */
@@ -210,3 +232,4 @@ footer {
     padding: 20px;
   }
 }
+
