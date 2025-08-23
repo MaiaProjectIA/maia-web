@@ -226,6 +226,13 @@ footer {
 
   .hero h1 {
     font-size: 2.2rem;
+    .hero-subtitle {
+  color: #CCCCCC;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 10px;
+}
   }
 
   .services {
